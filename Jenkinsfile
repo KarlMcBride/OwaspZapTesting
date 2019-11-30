@@ -9,7 +9,7 @@ pipeline
         {
             steps
             {
-                startZap(host: "localhost", port: 5557, timeout:500, zapHome: "/opt/jenkinsRemotingWorkspace/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/ZAP_w2019-11-25/ZAP_D-2019-11-25", sessionPath:"pipeline.session", allowedHosts:['localhost'])
+                startZap(host: "192.168.1.166", port: 5557, timeout:500, zapHome: "/opt/jenkinsRemotingWorkspace/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/ZAP_w2019-11-25/ZAP_D-2019-11-25", sessionPath:"pipeline.session", allowedHosts:['192.168.1.166'])
             }
         }
         stage('Build & Test')
