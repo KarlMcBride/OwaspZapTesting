@@ -3,7 +3,7 @@ pipeline
     agent any
     stages
     {
-        stage(#'Initialise ZAP')
+        stage('Initialise ZAP')
         {
             steps
             {
