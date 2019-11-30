@@ -3,6 +3,13 @@ pipeline
     agent any
     stages
     {
+        stage(#'Initialise ZAP')
+        {
+            steps
+            {
+                startZap(host: "localhost", port: 5555, timeout: 900, zapHome: "${WORKSPACE}", allowedHosts:['10.0.0.1'], sessionPath:"/path/to/session.session")
+            }
+        }
         stage('Build & Test')
         {
             steps
