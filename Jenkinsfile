@@ -3,17 +3,6 @@ pipeline
     agent any
     stages
     {
-        stage('Setup')
-        {
-            steps
-            {
-                script
-                {
-                    // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
-                    //startZap(host: "127.0.0.1", port: 9091, timeout:500, zapHome: "/opt/zaproxy", sessionPath:"/somewhere/session.session", allowedHosts:['github.com']) }
-                }
-            }
-        }
         stage('Build & Test')
         {
             steps
