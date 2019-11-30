@@ -2,7 +2,7 @@
 
 pipeline
 {
-    agent any
+    agent { label "buildnode" }
     stages
     {
         stage('Setup')
@@ -12,7 +12,8 @@ pipeline
                 script
                 {
                     // Start ZAP at /opt/zaproxy/zap.sh, allowing scans on github.com (if allowedHosts is not provided, any local addresses will be used
-                    startZap(host: "localhost", port: 5555, timeout:5, zapHome: "/opt/zaproxy", sessionPath:"vulnweb_demo.session", allowedHosts:['localhost'])
+                    startZap(host: "localhost", port: 5555, timeout:5, zapHome: "/opt/jenkinsRemotingWorkspace/tools/com.cloudbees.jenkins.plugins.customtools.CustomTool/ZAP_w2019-11-25/ZAP_D-2019-11-25",
+                    sessionPath:"vulnweb_demo.session", allowedHosts:['localhost'])
                 }
             }
         }
